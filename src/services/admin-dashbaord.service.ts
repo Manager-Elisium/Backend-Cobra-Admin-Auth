@@ -47,7 +47,7 @@ async function paginationDashboardService(body: any) {
     const statistics = await dashboardData(query) as any;
     const lobbyStatistics = await dashboardLobbyData(query) as any;
     const vipCardStatistics = await dashboardVipCardData(query) as any;
-    const lobbyImageAndTitleStatistics = await axios.get(`http://13.127.87.96/lobby/get-list`, {
+    const lobbyImageAndTitleStatistics = await axios.get(`http://192.168.1.46:3001/lobby/get-list`, {
         headers: {
             "Content-Type": "application/json"
         }
@@ -62,7 +62,7 @@ async function paginationDashboardService(body: any) {
         }
     });
 
-    const vipCardImageAndTitleStatistics = await axios.get(`http://13.127.87.96/vip_card/get-list`, {
+    const vipCardImageAndTitleStatistics = await axios.get(`http://192.168.1.46:3001/vip_card/get-list`, {
         headers: {
             "Content-Type": "application/json"
         }
@@ -137,7 +137,7 @@ async function vipCardDashboardService(body: any) {
                 "Vip Card Service is also created."
             );
         } else {
-            const vipCardStatistics = await axios.get(`http://13.127.87.96/vip_card/get-list`, {
+            const vipCardStatistics = await axios.get(`http://192.168.1.46:3001/vip_card/get-list`, {
                 headers: {
                     "Content-Type": "application/json"
                 }
@@ -184,7 +184,7 @@ async function lobbyDashboardService(body: any) {
                 "Dashboard Service is also created."
             );
         } else {
-            const lobbyStatistics = await axios.get(`http://13.127.87.96/lobby/get-list`, {
+            const lobbyStatistics = await axios.get(`http://192.168.1.46:3001/lobby/get-list`, {
                 headers: {
                     "Content-Type": "application/json"
                 }
