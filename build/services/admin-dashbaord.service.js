@@ -65,7 +65,7 @@ function paginationDashboardService(body) {
         const statistics = yield (0, admin_dashboard_repository_1.dashboardData)(query);
         const lobbyStatistics = yield (0, lobby_dashboard_repository_1.dashboardLobbyData)(query);
         const vipCardStatistics = yield (0, vip_card_dashboard_repository_1.dashboardVipCardData)(query);
-        const lobbyImageAndTitleStatistics = yield axios_1.default.get(`http://13.127.87.96/lobby/get-list`, {
+        const lobbyImageAndTitleStatistics = yield axios_1.default.get(`http://192.168.1.46:3001/lobby/get-list`, {
             headers: {
                 "Content-Type": "application/json"
             }
@@ -75,7 +75,7 @@ function paginationDashboardService(body) {
             let lobbyDetail = lobbyStatistics.find((lobby) => lobby.lobby_id == data.ID);
             return Object.assign(Object.assign({}, data), lobbyDetail);
         });
-        const vipCardImageAndTitleStatistics = yield axios_1.default.get(`http://13.127.87.96/vip_card/get-list`, {
+        const vipCardImageAndTitleStatistics = yield axios_1.default.get(`http://192.168.1.46:3001/vip_card/get-list`, {
             headers: {
                 "Content-Type": "application/json"
             }
@@ -139,7 +139,7 @@ function vipCardDashboardService(body) {
                 console.log("Vip Card Service is also created.");
             }
             else {
-                const vipCardStatistics = yield axios_1.default.get(`http://13.127.87.96/vip_card/get-list`, {
+                const vipCardStatistics = yield axios_1.default.get(`http://192.168.1.46:3001/vip_card/get-list`, {
                     headers: {
                         "Content-Type": "application/json"
                     }
@@ -183,7 +183,7 @@ function lobbyDashboardService(body) {
                 console.log("Dashboard Service is also created.");
             }
             else {
-                const lobbyStatistics = yield axios_1.default.get(`http://13.127.87.96/lobby/get-list`, {
+                const lobbyStatistics = yield axios_1.default.get(`http://192.168.1.46:3001/lobby/get-list`, {
                     headers: {
                         "Content-Type": "application/json"
                     }

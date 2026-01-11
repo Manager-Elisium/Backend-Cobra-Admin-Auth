@@ -1,5 +1,9 @@
 import "reflect-metadata";
+import * as dotenv from "dotenv";
 import { DataSource } from "typeorm";
+
+// Load environment variables before creating DataSource
+dotenv.config({ path: ".env" });
 
 export const AppDataSource = new DataSource({
   type: "postgres",
@@ -10,7 +14,7 @@ export const AppDataSource = new DataSource({
   database: process.env.PGDATABASE,
   synchronize: true,
   logging: false,
-  entities: ["src/domain/**/*.ts"],
+  entities: [__dirname + "/../domain/**/*.js"],
   migrations: [],
   subscribers: [],
   ssl: {
