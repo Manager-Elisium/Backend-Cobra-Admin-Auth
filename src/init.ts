@@ -4,6 +4,7 @@ let router = express.Router();
 
 import { AdminRouter } from "./router/admin-user.router";
 router.use("/register", AdminRouter);
+router.use("/admin", AdminRouter);  // Alias for frontend compatibility
 
 import { RoleRouter } from "./router/role.router";
 router.use("/role", RoleRouter);
